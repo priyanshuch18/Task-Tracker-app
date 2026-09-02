@@ -34,6 +34,10 @@ function App() {
   function deleteTask(id){
     setTasks(tasks.filter(t => t.id !== id));
   }
+  //Add a "Clear Completed" button to App.jsx (try writing the function yourself — filter out tasks where done is true), then:
+  function clearCompleted() {
+    setTasks(tasks.filter(t => !t.done));
+  }
 
   return (
     <div className="app">
@@ -55,6 +59,7 @@ function App() {
           />
         ))}
       </ul>
+      <button onClick={clearCompleted}>Clear Completed</button>
     </div>
   )
 }
